@@ -1,38 +1,126 @@
+/* Your existing styles */
+/* Center the calculator */
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #cdc9d9; /* Matches the background color in the image */
+}
+
+/* Calculator container */
+.calculator {
+  width: 320px; /* Adjusted width */
+  background-color: #333; /* Dark gray background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Stronger shadow for depth */
+}
+
+/* Display screen */
+.display {
+  background-color: #000;
+  color: #fff;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.previous-display {
+  font-size: 1em;
+  color: #ffa500;
+  min-height: 1em;
+}
+
+.current-display {
+  font-size: 2em;
+}
+
+/* Button grid layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* General button styling */
+button {
+  padding: 20px; /* Larger padding */
+  font-size: 1.2em;
+  border: 1px solid #444; /* Subtle border */
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #555; /* Dark gray for general buttons */
+  color: #fff;
+  box-shadow: 0 3px #222; /* Button depth effect */
+}
+
+/* Special button styling */
+button.clear {
+  background-color: #c44; /* Red color for AC button */
+  color: #fff;
+  grid-column: span 2;
+}
+
+button.equal {
+  background-color: #005a7f; /* Darker blue color for = button */
+  color: #fff;
+  grid-row: span 2; /* Takes up two rows */
+}
+
+/* Button for zero */
+button.zero {
+  grid-column: span 2; /* Takes up two columns */
+}
+
+/* Credit text styling */
+.credit {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #555; /* Lighter gray for the credit text */
+  font-family: 'Courier New', monospace; /* Monospace font */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Additional responsive styles */
+@media (max-width: 480px) {
+  .calculator {
+    width: 90vw;
+    padding: 15px;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .display {
+    height: 50px;
+  }
+
+  .previous-display {
+    font-size: 0.8em;
+  }
+
+  .current-display {
+    font-size: 1.5em;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1em;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 481px) and (max-width: 768px) {
+  .calculator {
+    width: 80vw;
+    max-width: 400px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 769px) {
+  .calculator {
+    width: 320px;
   }
 }
