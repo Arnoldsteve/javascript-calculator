@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import Calculator from './Components/Calculator';
-// import Calculator from './Calculator';
 
 function App() {
   return (
-    <div className="App" >
+    <div className="App">
       <Calculator />
       <div className="credit">Designed and Coded By Steve Arnold</div>
     </div>
